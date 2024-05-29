@@ -64,6 +64,8 @@ public class CheckoutTest {
 
         assertEquals(3.58, rentalAgreement.finalCharge(), 0.00001);
         assertEquals("07/05/2020", rentalAgreement.dueDate());
+        assertEquals("3.98", rentalAgreement.formattedPreDiscountCharge());
+        assertEquals("0.40", rentalAgreement.formattedDiscountAmount());
     }
 
     // Test 3
@@ -80,6 +82,8 @@ public class CheckoutTest {
 
         assertEquals(3.35, rentalAgreement.finalCharge(), 0.00001);
         assertEquals("07/07/2015", rentalAgreement.dueDate());
+        assertEquals("4.47", rentalAgreement.formattedPreDiscountCharge());
+        assertEquals("1.12", rentalAgreement.formattedDiscountAmount());
     }
 
     // Test 4
@@ -96,6 +100,8 @@ public class CheckoutTest {
 
         assertEquals(14.95, rentalAgreement.finalCharge(), 0.00001);
         assertEquals("09/09/2015", rentalAgreement.dueDate());
+        assertEquals("14.95", rentalAgreement.formattedPreDiscountCharge());
+        assertEquals("0.00", rentalAgreement.formattedDiscountAmount());
     }
 
     // Test 5
@@ -112,6 +118,8 @@ public class CheckoutTest {
 
         assertEquals(23.92, rentalAgreement.finalCharge(), 0.00001);
         assertEquals("07/11/2015", rentalAgreement.dueDate());
+        assertEquals("23.92", rentalAgreement.formattedPreDiscountCharge());
+        assertEquals("0.00", rentalAgreement.formattedDiscountAmount());
 
     }
 
@@ -129,5 +137,8 @@ public class CheckoutTest {
 
         assertEquals(4.48, rentalAgreement.finalCharge(), 0.00001);
         assertEquals("07/06/2020", rentalAgreement.dueDate());
+        assertEquals("8.97", rentalAgreement.formattedPreDiscountCharge());
+        assertEquals("4.49", rentalAgreement.formattedDiscountAmount());
+
     }
 }

@@ -105,6 +105,14 @@ public class RentalAgreement {
         return sdf.format(dueDate.getTime());
     }
 
+    public String formattedPreDiscountCharge() {
+        return String.format("%.2f", preDiscountCharge);
+    }
+
+    public String formattedDiscountAmount() {
+        return String.format("%.2f", discountAmount);
+    }
+
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
@@ -117,9 +125,9 @@ public class RentalAgreement {
                 "Due Date: " + dueDate() + "\n" +
                 "Daily Rental Charge: $" + String.format("%.2f", dailyRentalCharge) + "\n" +
                 "Charge Days: " + chargeDays + "\n" +
-                "Pre-discount Charge: $" + String.format("%.2f", preDiscountCharge) + "\n" +
+                "Pre-discount Charge: $" + formattedPreDiscountCharge() + "\n" +
                 "Discount Percent: " + discount + "%\n" +
-                "Discount Amount: $" + String.format("%.2f", discountAmount) + "\n" +
+                "Discount Amount: $" + formattedDiscountAmount() + "\n" +
                 "Final Charge: $" + String.format("%.2f", finalCharge) + "\n" +
                 "===== End of Rental Agreement =====" + "\n";
     }

@@ -65,18 +65,21 @@ public class RentalAgreement {
 
         for (int i = 0; i < rentalDays; i++) {
             calendar.add(Calendar.DAY_OF_YEAR, 1);
-            int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-            boolean isWeekend = (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY);
-            boolean isHoliday = isHoliday(calendar);
-
-            if ((tool.isWeekdayCharge() && !isWeekend && !isHoliday) ||
-                    (tool.isWeekendCharge() && isWeekend) ||
-                    (tool.isHolidayCharge() && isHoliday)) {
+            if (isChargeableDay(calendar)) {
                 chargeDays++;
             }
         }
-
         return chargeDays;
+    }
+
+    private boolean isChargeableDay(Calendar calendar) {
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        boolean isWeekend = (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY);
+        boolean isHoliday = isHoliday(calendar);
+
+        return ((tool.isWeekdayCharge() && !isWeekend && !isHoliday) ||
+                (tool.isWeekendCharge() && isWeekend) ||
+                (tool.isHolidayCharge() && isHoliday));
     }
 
     private boolean isHoliday(Calendar checkoutDate) {

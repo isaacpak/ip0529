@@ -38,7 +38,8 @@ public class CheckoutTest {
      * use @ParameterizedTest along with
      * 
      * @CsvSource to input the tool code, rental days, and the date so it'd be
-     * easier to add to the test for different scenarios. I ran into issues with
+     * easier to add to the test for different scenarios. I ran into issues
+     * upgrading to
      * JUnit 5.
      * 
      * For example:

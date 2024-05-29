@@ -100,6 +100,11 @@ public class RentalAgreement {
         return finalCharge;
     }
 
+    public String dueDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+        return sdf.format(dueDate.getTime());
+    }
+
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
@@ -109,7 +114,7 @@ public class RentalAgreement {
                 "Tool Brand: " + tool.getBrand() + "\n" +
                 "Rental Days: " + rentalDays + "\n" +
                 "Checkout Date: " + sdf.format(checkoutDate.getTime()) + "\n" +
-                "Due Date: " + sdf.format(dueDate.getTime()) + "\n" +
+                "Due Date: " + dueDate() + "\n" +
                 "Daily Rental Charge: $" + String.format("%.2f", dailyRentalCharge) + "\n" +
                 "Charge Days: " + chargeDays + "\n" +
                 "Pre-discount Charge: $" + String.format("%.2f", preDiscountCharge) + "\n" +

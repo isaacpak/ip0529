@@ -63,6 +63,7 @@ public class CheckoutTest {
                 new Tool("LADW", "Ladder", "Werner", 1.99, true, true, false));
 
         assertEquals(3.58, rentalAgreement.finalCharge(), 0.00001);
+        assertEquals("07/05/2020", rentalAgreement.dueDate());
     }
 
     // Test 3
@@ -78,6 +79,7 @@ public class CheckoutTest {
                 new Tool("CHNS", "Chainsaw", "Stihl", 1.49, true, false, true));
 
         assertEquals(3.35, rentalAgreement.finalCharge(), 0.00001);
+        assertEquals("07/07/2015", rentalAgreement.dueDate());
     }
 
     // Test 4
@@ -93,6 +95,7 @@ public class CheckoutTest {
                 new Tool("JAKD", "Jackhammer", "DeWalt", 2.99, true, true, false));
 
         assertEquals(14.95, rentalAgreement.finalCharge(), 0.00001);
+        assertEquals("09/09/2015", rentalAgreement.dueDate());
     }
 
     // Test 5
@@ -108,6 +111,7 @@ public class CheckoutTest {
                 new Tool("JAKR", "Jackhammer", "Ridgid", 2.99, true, true, false));
 
         assertEquals(23.92, rentalAgreement.finalCharge(), 0.00001);
+        assertEquals("07/11/2015", rentalAgreement.dueDate());
 
     }
 
@@ -124,6 +128,6 @@ public class CheckoutTest {
                 new Tool("JAKR", "Jackhammer", "Ridgid", 2.99, true, true, false));
 
         assertEquals(4.48, rentalAgreement.finalCharge(), 0.00001);
-
+        assertEquals("07/06/2020", rentalAgreement.dueDate());
     }
 }
